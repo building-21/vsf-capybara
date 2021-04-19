@@ -32,7 +32,7 @@ export default {
   data () {
     return {
       logo: this.getLogo()
-    };    
+    };
   },
   methods: {
     async getLogo () {

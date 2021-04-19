@@ -2,7 +2,6 @@ import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/commo
 import { TaskQueue } from '@vue-storefront/core/lib/sync'
 
 export const getContent = async (url): Promise<any> => {
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
   try {
     const task = await TaskQueue.execute({ url,
       payload: {

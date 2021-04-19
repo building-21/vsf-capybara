@@ -22,7 +22,7 @@ export const defaultContentStore = {
         const content = await getContent(url)
         commit('SET_DEFAULT_CONTENT', content.content)
       } catch (err) {
-        Logger.debug('Unable to load default content' + err)()
+        Logger.debug('Unable to load default content ' + err)()
       }
     }
   },
