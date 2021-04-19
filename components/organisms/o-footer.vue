@@ -76,7 +76,7 @@ import { getPathForStaticPage } from 'theme/helpers';
 import config from 'config';
 import { currentStoreView } from '@vue-storefront/core/lib/multistore';
 import get from 'lodash-es/get';
-import { getSocialLinks } from 'theme/store/homepage'
+import { getContent } from 'theme/store/homepage'
 import { Logger } from '@vue-storefront/core/lib/logger'
 
 export default {
@@ -157,7 +157,8 @@ export default {
     },
     async getLinks () {
       try {
-        this.social = await getSocialLinks()
+        let url = config.api.url + '/api/social'
+        this.social = await getContent(url)
         this.social = this.social.links
         return this.social
       } catch (err) {

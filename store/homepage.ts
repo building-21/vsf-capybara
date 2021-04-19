@@ -1,9 +1,8 @@
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
 import { TaskQueue } from '@vue-storefront/core/lib/sync'
-import config from 'config';
 
-export const getSocialLinks = async (): Promise<string> => {
-  let url = config.api.url + '/api/social'
+export const getContent = async (url): Promise<any> => {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
   try {
     const task = await TaskQueue.execute({ url,
       payload: {
