@@ -39,6 +39,9 @@ export default {
       try {
         let url = config.images.baseUrl + 'logo'
         this.logo = await getContent(url)
+        if(!this.logo.url) {
+          this.logo.url = "/assets/logo.svg" 
+        }
         return this.logo
       } catch (err) {
         Logger.debug('Unable to load logo ' + err)()
