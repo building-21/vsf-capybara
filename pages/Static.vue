@@ -53,7 +53,7 @@ export default {
         { title: i18n.t('Store locator'), link: getPathForStaticPage('/store-locator'), isCms: true },
         // { title: i18n.t('Delivery'), link: '/delivery' },
         // { title: i18n.t('Return policy'), link: '/returns' },
-        //{ title: i18n.t('Privacy policy'), link: '/privacy' },
+        // { title: i18n.t('Privacy policy'), link: '/privacy' },
         // { title: i18n.t('Size guide'), link: '/size-guide' },
         { title: i18n.t('Contact us'), link: getPathForStaticPage('/contact'), isCms: true },
         { title: i18n.t('Additional Information'), link: '/additional-information' }
