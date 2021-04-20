@@ -32,7 +32,7 @@
             </router-link>
           </SfListItem> -->
           <SfListItem>
-            <router-link to="/legal" exact>
+            <router-link to="/additional-information" exact>
               <SfMenuItem
                 class="sf-footer__menu-item"
                 :label="$t('Privacy policy')"
@@ -126,7 +126,7 @@ export default {
           children: [
             // Not to use in V2
             // { name: 'Customer service', link: '/customer-service' },
-            { name: 'Resources', link: '/legal' },
+            { name: 'Resources', link: '/additional-information' },
             { name: 'Contact us', link: getPathForStaticPage('/contact') }
           ]
         },
