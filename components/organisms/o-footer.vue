@@ -53,7 +53,7 @@
       </SfFooterColumn>
       <SfFooterColumn :title="$t('Social')" class="social-column">
         <div v-for="item in social" :key="item.site" class="social-icon">
-          <a :href="item.link">
+          <a :href="item.link" target="_blank" rel="noopener noreferrer">
             <img
               :key="item.site"
               :src="'/assets/icons/' + item.site + '.svg'"
