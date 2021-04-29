@@ -32,7 +32,7 @@
             </router-link>
           </SfListItem> -->
           <SfListItem>
-            <router-link to="/additional-information" exact>
+            <router-link to="/i/privacy" exact>
               <SfMenuItem
                 class="sf-footer__menu-item"
                 :label="$t('Privacy policy')"
@@ -53,7 +53,7 @@
       </SfFooterColumn>
       <SfFooterColumn :title="$t('Social')" class="social-column">
         <div v-for="item in social" :key="item.site" class="social-icon">
-          <a :href="item.link">
+          <a :href="item.link" target="_blank">
             <img
               :key="item.site"
               :src="'/assets/icons/' + item.site + '.svg'"
