@@ -37,7 +37,7 @@ export default {
     },
     detailsLink: {
       type: String,
-      default: '/privacy'
+      default: '/i/privacy'
     },
     message: {
       type: String,
