@@ -5,7 +5,7 @@
         <div class="cookie__message">
           {{ message }}
           <router-link
-            :to="localizedRoute(detailsLink)"
+            :to="detailsLink"
             :title="detailsLinkText"
             class="cookie__message-link"
           >
@@ -37,7 +37,7 @@ export default {
     },
     detailsLink: {
       type: String,
-      default: '/i/privacy'
+      default: 'https://wiigo.cloud/en-US/privacy/cookie-policy'
     },
     message: {
       type: String,
