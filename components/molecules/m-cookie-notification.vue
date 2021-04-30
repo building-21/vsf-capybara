@@ -4,13 +4,13 @@
       <div class="cookie">
         <div class="cookie__message">
           {{ message }}
-          <router-link
-            :to="detailsLink"
-            :title="detailsLinkText"
+          <a 
+            href="https://wiigo.cloud/en-US/privacy/cookie-policy"
+            target="_blank"
             class="cookie__message-link"
           >
             {{ detailsLinkText }}
-          </router-link>
+          </a>
         </div>
         <div class="cookie__icon">
           <SfIcon
@@ -34,10 +34,6 @@ export default {
     detailsLinkText: {
       type: String,
       default: i18n.t('See details')
-    },
-    detailsLink: {
-      type: String,
-      default: 'https://wiigo.cloud/en-US/privacy/cookie-policy'
     },
     message: {
       type: String,
