@@ -47,7 +47,7 @@
         :error-message="$t('Field is required')"
         @blur="$v.shipping.streetAddress.$touch()"
       />
-      <SfInput
+      <!-- <SfInput
         v-model.trim="shipping.apartmentNumber"
         class="form__element"
         name="apartment-number"
@@ -56,7 +56,7 @@
         :valid="!$v.shipping.apartmentNumber.$error"
         :error-message="$t('Field is required')"
         @blur="$v.shipping.apartmentNumber.$touch()"
-      />
+      /> -->
       <SfInput
         v-model.trim="shipping.city"
         class="form__element form__element--half"
