@@ -55,7 +55,28 @@
       >
         {{ $t('Allow order notifications') }}
       </SfButton> -->
+      <!-- Not to use in V2 -->
+      <!-- <SfHeading
+        :title="$t('What we can improve?')"
+        :level="3"
+        class="sf-heading--left"
+      />
+      <p class="paragraph">
+        {{ $t('Your feedback is important for us. Let us know what we could improve.') }}
+      </p>
+      <textarea
+        class="feedback"
+        v-model="feedback"
+        :placeholder="$t('Type your opinion')"
+      /> -->
       <div class="wrapper__buttons">
+        <!-- Not to use in V2 -->
+        <!-- <SfButton
+          class="color-secondary sf-button--full-width"
+          @click="sendFeedback"
+        >
+          {{ $t('Send my feedback') }}
+        </SfButton> -->
         <SfButton
           class="sf-button--outline sf-button--full-width"
           @click="$router.push(localizedRoute('/'))"
