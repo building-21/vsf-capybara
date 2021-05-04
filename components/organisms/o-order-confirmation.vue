@@ -17,7 +17,7 @@
         <SfHeading
           :title="$t('You\'ve successfully placed the order')"
           :level="3"
-          class="sf-heading--left"
+          class="sf-heading--center"
         />
         <!-- Not to use in V2 -->
         <!-- <p class="paragraph">
@@ -55,7 +55,8 @@
       >
         {{ $t('Allow order notifications') }}
       </SfButton> -->
-      <SfHeading
+      <!-- Not to use in V2 -->
+      <!-- <SfHeading
         :title="$t('What we can improve?')"
         :level="3"
         class="sf-heading--left"
@@ -67,14 +68,15 @@
         class="feedback"
         v-model="feedback"
         :placeholder="$t('Type your opinion')"
-      />
+      /> -->
       <div class="wrapper__buttons">
-        <SfButton
+        <!-- Not to use in V2 -->
+        <!-- <SfButton
           class="color-secondary sf-button--full-width"
           @click="sendFeedback"
         >
           {{ $t('Send my feedback') }}
-        </SfButton>
+        </SfButton> -->
         <SfButton
           class="sf-button--outline sf-button--full-width"
           @click="$router.push(localizedRoute('/'))"

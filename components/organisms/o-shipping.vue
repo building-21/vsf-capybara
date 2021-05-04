@@ -52,10 +52,6 @@
         class="form__element"
         name="apartment-number"
         :label="$t('House/Apartment number')"
-        :required="true"
-        :valid="!$v.shipping.apartmentNumber.$error"
-        :error-message="$t('Field is required')"
-        @blur="$v.shipping.apartmentNumber.$touch()"
       />
       <SfInput
         v-model.trim="shipping.city"
@@ -196,10 +192,6 @@ export default {
         required
       },
       streetAddress: {
-        required,
-        unicodeAlphaNum
-      },
-      apartmentNumber: {
         required,
         unicodeAlphaNum
       },
