@@ -47,16 +47,13 @@
         :error-message="$t('Field is required')"
         @blur="$v.shipping.streetAddress.$touch()"
       />
-      <!-- <SfInput
+      <!-- https://github.com/building-21/pos-erp/issues/938 -->
+      <SfInput
         v-model.trim="shipping.apartmentNumber"
         class="form__element"
         name="apartment-number"
         :label="$t('House/Apartment number')"
-        :required="true"
-        :valid="!$v.shipping.apartmentNumber.$error"
-        :error-message="$t('Field is required')"
-        @blur="$v.shipping.apartmentNumber.$touch()"
-      /> -->
+      />
       <SfInput
         v-model.trim="shipping.city"
         class="form__element form__element--half"
@@ -196,10 +193,6 @@ export default {
         required
       },
       streetAddress: {
-        required,
-        unicodeAlphaNum
-      },
-      apartmentNumber: {
         required,
         unicodeAlphaNum
       },

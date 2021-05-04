@@ -4,7 +4,7 @@
       <div class="cookie">
         <div class="cookie__message">
           {{ message }}
-          <a
+          <a 
             href="https://wiigo.cloud/en-US/privacy/cookie-policy"
             target="_blank"
             class="cookie__message-link"
