@@ -47,7 +47,6 @@
         :error-message="$t('Field is required')"
         @blur="$v.shipping.streetAddress.$touch()"
       />
-      <!-- https://github.com/building-21/pos-erp/issues/938 -->
       <SfInput
         v-model.trim="shipping.apartmentNumber"
         class="form__element"
