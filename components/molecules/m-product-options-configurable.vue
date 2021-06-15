@@ -78,7 +78,7 @@ export default {
         const configName = attribute.attribute_code ? attribute.attribute_code : attribute.label.toLowerCase()
         const optionId = this.configuration[configName] ? this.configuration[configName].id : ''
         const option = this.getCurrentProductOptions[configName].find(o => o.id === optionId)
-        return option.hasOwnProperty('label') ? option.label : ''
+        return option && option.hasOwnProperty('label') ? option.label : ''
       }
     },
     productAttributes () {
