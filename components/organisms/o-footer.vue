@@ -32,7 +32,7 @@
             </router-link>
           </SfListItem> -->
           <SfListItem>
-            <router-link to="/additional-information" exact>
+            <router-link to="/i/privacy" exact>
               <SfMenuItem
                 class="sf-footer__menu-item"
                 :label="$t('Privacy policy')"

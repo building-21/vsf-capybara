@@ -5,7 +5,8 @@
       :level="2"
       class="sf-heading--left sf-heading--no-underline title"
     />
-    <div class="form">
+    <!-- Not to use in V2 -->
+    <!-- <div class="form">
       <SfCheckbox
         v-if="!isVirtualCart"
         v-model="sendToShippingAddress"
@@ -117,8 +118,7 @@
         name="phone"
         :label="$t('Phone Number')"
       />
-      <!-- Not to use in V2 -->
-      <!-- <SfCheckbox
+      <SfCheckbox
         v-model="generateInvoice"
         class="form__element form__checkbox"
         name="generateInvoice"
@@ -152,8 +152,8 @@
         <p class="mb40 mt0">
           {{ $t("We will send you the invoice to given e-mail address") }}
         </p>
-      </template> -->
-    </div>
+      </template>
+    </div> -->
     <SfHeading
       :title="$t('Payment method')"
       :level="3"
