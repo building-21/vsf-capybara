@@ -14,6 +14,7 @@ import { PaymentCashOnDeliveryModule } from 'src/modules/payment-cash-on-deliver
 
 import { registerModule } from '@vue-storefront/core/lib/modules'
 import { PaymentPaypalModule } from '../../../modules/paypal';
+import { GoogleAnalyticsModule } from 'src/modules/google-analytics'
 
 // TODO:distributed across proper pages BEFORE 1.11
 export function registerClientModules () {
@@ -30,6 +31,7 @@ export function registerClientModules () {
   registerModule(CmsModule)
   registerModule(NewsletterModule)
   registerModule(PaymentPaypalModule)
+  registerModule(GoogleAnalyticsModule)
 }
 
 // Deprecated API, will be removed in 2.0
