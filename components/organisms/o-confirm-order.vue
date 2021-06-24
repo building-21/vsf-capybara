@@ -104,7 +104,7 @@
                 <template #configuration>
                   <div class="collected-product__properties">
                     <SfProperty
-                      v-for="property in ['Color', 'Size']"
+                      v-for="property in getAttributes()"
                       :key="property"
                       :name="property"
                       :value="getProductProperty(product, property)"
@@ -170,7 +170,7 @@
           </div>
         </SfTableData>
         <SfTableData
-          v-for="property in ['Color', 'Size']"
+          v-for="property in getAttributes()"
           :key="property"
           class="table__data"
         >
@@ -322,13 +322,7 @@ export default {
   mixins: [OrderReview],
   data () {
     return {
-      tableHeaders: [
-        this.$t('Description'),
-        this.$t('Colour'),
-        this.$t('Size'),
-        this.$t('Quantity'),
-        this.$t('Price')
-      ],
+      tableHeaders: [this.$t('Description')],
       characteristics: [
         {
           title: this.$t('Safety'),
@@ -399,10 +393,40 @@ export default {
       return price ? this.$options.filters.price(price) : '';
     },
     getProductProperty (product, propertyName) {
+      for (let i in product.options) {
+        // find the attribute that matches this product option and set the value to the appropriate label
+        for (let option of product.configurable_options) {
+          if (option.label === product.options[i].label) {
+            for (let value of option.values) {
+              let product_option = product.options[i];
+              if (Number(value.value_index) === product_option.value) {
+                product_option.value = value.label;
+                product.options[i] = product_option;
+                break;
+              }
+            }
+            break;
+          }
+        }
+      }
       const property = product.options
         ? product.options.find(option => option.label === propertyName)
         : false;
       return property ? property.value : '';
+    },
+    // gets all attributes used by products in the cart
+    getAttributes () {
+      const attributes = [];
+      for (let product of this.productsInCart) {
+        if (product.options) {
+          for (let option of product.options) {
+            if (!attributes.includes(option.label)) {
+              attributes.push(this.$t(option.label));
+            }
+          }
+        }
+      }
+      return attributes;
     },
     removeProduct (product) {
       this.$store.dispatch('cart/removeItem', { product });

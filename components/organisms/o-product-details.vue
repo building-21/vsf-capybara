@@ -14,13 +14,6 @@
         :custom-options="productCustomOptions"
         :reviews="reviews"
       />
-      <SfButton
-        v-show="sizeOption"
-        @click.native="openSizeGuide"
-        class="sf-button--text desktop-only product__guide"
-      >
-        {{ $t('Size guide') }}
-      </SfButton>
       <div>
         <MProductOptionsConfigurable
           v-if="product.type_id =='configurable'"

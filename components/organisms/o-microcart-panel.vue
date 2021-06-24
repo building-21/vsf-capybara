@@ -174,6 +174,24 @@ export default {
         : getProductPrice(product);
     },
     getProductOptions (product) {
+      // remap the attributes to show the right description
+      for (let i in product.options) {
+        // find the attribute that matches this product option and set the value to the appropriate label
+        for (let option of product.configurable_options) {
+          if (option.label === product.options[i].label) {
+            for (let value of option.values) {
+              let product_option = product.options[i];
+              if (Number(value.value_index) === product_option.value) {
+                product_option.value = value.label;
+                product.options[i] = product_option;
+                break;
+              }
+            }
+            break;
+          }
+        }
+      }
+
       return onlineHelper.isOnline && product.totals && product.totals.options
         ? product.totals.options
         : product.options || {};
